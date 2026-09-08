@@ -1,225 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Market Intelligence India</title>
-  <style>
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #222;
-    }
+<title>Market Intelligence India</title>
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
 
-    header p {
-      margin: 8px 0 0;
-      color: #cbd5e1;
-      font-size: 14px;
-    }
+header {
+    background: #111827;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-    .container {
-      padding: 15px;
-      max-width: 900px;
-      margin: auto;
-    }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
 
-    .card {
-      background: white;
-      margin: 12px 0;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+header p {
+    color: #cbd5e1;
+    margin-bottom: 0;
+}
 
-    h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
+.card {
+    background: white;
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
-    .stat {
-      padding: 15px;
-      border-radius: 10px;
-      background: #eef2ff;
-      text-align: center;
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
 
-    .stat strong {
-      display: block;
-      font-size: 20px;
-      margin-top: 5px;
-    }
+.stat {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
 
-    .section-title {
-      margin-top: 25px;
-      font-size: 20px;
-      font-weight: bold;
-    }
+.label {
+    font-size: 13px;
+    color: #64748b;
+}
 
-    .company {
-      border-left: 5px solid #2563eb;
-      margin: 10px 0;
-      padding: 14px;
-      background: white;
-      border-radius: 8px;
-    }
+.value {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+}
 
-    .risk {
-      height: 10px;
-      background: #e5e7eb;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 8px;
-    }
+.positive {
+    color: #15803d;
+}
 
-    .risk-bar {
-      height: 100%;
-      background: #f59e0b;
-      width: 45%;
-    }
+.negative {
+    color: #dc2626;
+}
 
-    .tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: #dcfce7;
-      color: #166534;
-      font-size: 12px;
-      font-weight: bold;
-    }
+.neutral {
+    color: #2563eb;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 12px;
-    }
+.status {
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    background: #f1f5f9;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      background: #2563eb;
-      color: white;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-  </style>
+button, .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+.small {
+    font-size: 12px;
+    color: #64748b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 12px;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <h1>📊 Market Intelligence India</h1>
-  <p>NSE & BSE Market Information Dashboard</p>
+    <h1>📊 Market Intelligence India</h1>
+    <p>NSE & BSE Information Dashboard</p>
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>Market Dashboard</h2>
+    <div class="card">
+        <h2>🇮🇳 Live NSE Market Status</h2>
 
-    <div class="grid">
-      <div class="stat">
-        NSE
-        <strong>Loading</strong>
-      </div>
+        <div id="loading" class="loading">
+            Loading official NSE data...
+        </div>
 
-      <div class="stat">
-        BSE
-        <strong>Loading</strong>
-      </div>
+        <div id="marketData" style="display:none;">
 
-      <div class="stat">
-        Opportunities
-        <strong>--</strong>
-      </div>
+            <div class="grid">
 
-      <div class="stat">
-        Risk Level
-        <strong>-- / 100</strong>
-      </div>
-    </div>
-  </div>
+                <div class="stat">
+                    <div class="label">Market</div>
+                    <div class="value" id="marketName">--</div>
+                </div>
 
-  <div class="section-title">⭐ Top Opportunities</div>
+                <div class="stat">
+                    <div class="label">Status</div>
+                    <div class="value" id="marketStatus">--</div>
+                </div>
 
-  <div class="company">
-    <strong>Market Data Coming Soon</strong>
-    <p>Official NSE/BSE information will be displayed here.</p>
+                <div class="stat">
+                    <div class="label">NIFTY 50</div>
+                    <div class="value" id="niftyValue">--</div>
+                </div>
 
-    <div class="risk">
-      <div class="risk-bar"></div>
-    </div>
+                <div class="stat">
+                    <div class="label">Change</div>
+                    <div class="value" id="niftyChange">--</div>
+                </div>
 
-    <span class="tag">Version 1</span>
-  </div>
+            </div>
 
-  <div class="section-title">📢 Corporate Actions</div>
+            <div class="status">
+                <strong>Last Updated:</strong>
+                <span id="updatedTime">--</span>
+            </div>
 
-  <div class="card">
-    <p>Dividends, Bonus Issues, Stock Splits and other corporate actions will appear here.</p>
-  </div>
+        </div>
 
-  <div class="section-title">📈 Investment Classification</div>
+        <div id="errorMessage" style="display:none;" class="status">
+            Unable to load data automatically.
+            Please use the Official NSE link below.
+        </div>
 
-  <div class="grid">
+        <button onclick="loadMarketData()">
+            🔄 Refresh Official Data
+        </button>
 
-    <div class="stat">
-      ⚡ Intraday
-      <strong>Coming Soon</strong>
     </div>
 
-    <div class="stat">
-      📅 Short Term
-      <strong>Coming Soon</strong>
+
+    <div class="card">
+
+        <h2>📢 Official Corporate Announcements</h2>
+
+        <p>
+            Open the official NSE corporate filings page for the latest announcements.
+        </p>
+
+        <a class="button"
+           href="https://www.nseindia.com/companies-listing/corporate-filings-announcements"
+           target="_blank">
+
+            Open NSE Announcements
+
+        </a>
+
     </div>
 
-    <div class="stat">
-      🏦 Long Term
-      <strong>Coming Soon</strong>
+
+    <div class="card">
+
+        <h2>💰 Corporate Actions</h2>
+
+        <p>
+            Dividends, bonus issues, stock splits and other corporate actions.
+        </p>
+
+        <a class="button"
+           href="https://www.nseindia.com/companies-listing/corporate-filings-actions"
+           target="_blank">
+
+            Open NSE Corporate Actions
+
+        </a>
+
     </div>
 
-    <div class="stat">
-      🔥 Famous Companies
-      <strong>Tracked</strong>
+
+    <div class="card">
+
+        <h2>🏢 Company Research</h2>
+
+        <p>
+            Search and verify company information using official exchange sources.
+        </p>
+
+        <a class="button"
+           href="https://www.nseindia.com/get-quotes/equity"
+           target="_blank">
+
+            Search NSE Companies
+
+        </a>
+
     </div>
 
-  </div>
 
-  <div class="card">
-    <h2>Daily Intelligence Report</h2>
-    <p>Daily analysis based on available official market information.</p>
-    <button>View Latest Report</button>
-  </div>
+    <div class="card">
+
+        <h2>⚠️ Risk Meter</h2>
+
+        <div class="status">
+
+            Risk Score: <strong>Not calculated yet</strong>
+
+            <p class="small">
+                Version 3 will calculate risk using defined market,
+                volatility and company-event rules.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>📈 Investment Classification</h2>
+
+        <div class="grid">
+
+            <div class="stat">
+                <div class="label">⚡ Intraday</div>
+                <div class="value neutral">Analysis Engine Pending</div>
+            </div>
+
+            <div class="stat">
+                <div class="label">📅 Short Term</div>
+                <div class="value neutral">Analysis Engine Pending</div>
+            </div>
+
+            <div class="stat">
+                <div class="label">🏦 Long Term</div>
+                <div class="value neutral">Analysis Engine Pending</div>
+            </div>
+
+            <div class="stat">
+                <div class="label">⭐ Famous Companies</div>
+                <div class="value neutral">Tracking Pending</div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
+
 <footer>
-  Market Intelligence India | Information & Analysis Dashboard
+
+Market Intelligence India<br>
+Data should always be verified with official exchange sources.<br>
+Not investment advice.
+
 </footer>
+
+
+<script>
+
+async function loadMarketData() {
+
+    const loading = document.getElementById("loading");
+    const marketData = document.getElementById("marketData");
+    const errorMessage = document.getElementById("errorMessage");
+
+    loading.style.display = "block";
+    marketData.style.display = "none";
+    errorMessage.style.display = "none";
+
+    try {
+
+        const response = await fetch(
+            "https://www.nseindia.com/api/marketStatus",
+            {
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Data request failed");
+        }
+
+        const data = await response.json();
+
+        const capitalMarket = data.marketState.find(
+            item => item.market === "Capital Market"
+        );
+
+        const nifty = data.indicativenifty50;
+
+        document.getElementById("marketName").textContent =
+            capitalMarket ? capitalMarket.market : "Capital Market";
+
+        document.getElementById("marketStatus").textContent =
+            capitalMarket ? capitalMarket.marketStatus : "--";
+
+        document.getElementById("niftyValue").textContent =
+            nifty && nifty.closingValue
+            ? "₹ " + Number(nifty.closingValue).toLocaleString("en-IN")
+            : "--";
+
+        const changeElement =
+            document.getElementById("niftyChange");
+
+        if (nifty && nifty.change !== undefined) {
+
+            const change =
+                Number(nifty.change).toFixed(2);
+
+            const percentage =
+                nifty.perChange !== undefined
+                ? Number(nifty.perChange).toFixed(2)
+                : "--";
+
+            changeElement.textContent =
+                change + " (" + percentage + "%)";
+
+            changeElement.className =
+                "value " +
+                (nifty.change > 0
+                    ? "positive"
+                    : nifty.change < 0
+                    ? "negative"
+                    : "neutral");
+
+        }
+
+        document.getElementById("updatedTime").textContent =
+            capitalMarket && capitalMarket.tradeDate
+            ? capitalMarket.tradeDate
+            : "Official NSE timestamp unavailable";
+
+        loading.style.display = "none";
+        marketData.style.display = "block";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        loading.style.display = "none";
+        errorMessage.style.display = "block";
+
+    }
+
+}
+
+
+loadMarketData();
+
+</script>
 
 </body>
 </html>
