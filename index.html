@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Intelligence India</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .container {
+      padding: 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      margin: 12px 0;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 15px;
+      border-radius: 10px;
+      background: #eef2ff;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .company {
+      border-left: 5px solid #2563eb;
+      margin: 10px 0;
+      padding: 14px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .risk {
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .risk-bar {
+      height: 100%;
+      background: #f59e0b;
+      width: 45%;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📊 Market Intelligence India</h1>
+  <p>NSE & BSE Market Information Dashboard</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Market Dashboard</h2>
+
+    <div class="grid">
+      <div class="stat">
+        NSE
+        <strong>Loading</strong>
+      </div>
+
+      <div class="stat">
+        BSE
+        <strong>Loading</strong>
+      </div>
+
+      <div class="stat">
+        Opportunities
+        <strong>--</strong>
+      </div>
+
+      <div class="stat">
+        Risk Level
+        <strong>-- / 100</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">⭐ Top Opportunities</div>
+
+  <div class="company">
+    <strong>Market Data Coming Soon</strong>
+    <p>Official NSE/BSE information will be displayed here.</p>
+
+    <div class="risk">
+      <div class="risk-bar"></div>
+    </div>
+
+    <span class="tag">Version 1</span>
+  </div>
+
+  <div class="section-title">📢 Corporate Actions</div>
+
+  <div class="card">
+    <p>Dividends, Bonus Issues, Stock Splits and other corporate actions will appear here.</p>
+  </div>
+
+  <div class="section-title">📈 Investment Classification</div>
+
+  <div class="grid">
+
+    <div class="stat">
+      ⚡ Intraday
+      <strong>Coming Soon</strong>
+    </div>
+
+    <div class="stat">
+      📅 Short Term
+      <strong>Coming Soon</strong>
+    </div>
+
+    <div class="stat">
+      🏦 Long Term
+      <strong>Coming Soon</strong>
+    </div>
+
+    <div class="stat">
+      🔥 Famous Companies
+      <strong>Tracked</strong>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>Daily Intelligence Report</h2>
+    <p>Daily analysis based on available official market information.</p>
+    <button>View Latest Report</button>
+  </div>
+
+</div>
+
+<footer>
+  Market Intelligence India | Information & Analysis Dashboard
+</footer>
+
+</body>
+</html>
