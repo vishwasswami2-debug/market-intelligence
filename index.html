@@ -150,10 +150,10 @@
       status.textContent = "Connected ✅";
 
       // NIFTY
-      if (data.nifty) {
+      if (data.market) {
 
         niftyValue.textContent =
-          Number(data.nifty.value).toLocaleString("en-IN");
+          Number(data.market.value).toLocaleString("en-IN");
 
         const change =
           Number(data.nifty.change || 0);
